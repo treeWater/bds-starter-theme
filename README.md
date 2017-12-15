@@ -1,6 +1,6 @@
 # BDS Starter Theme
 
-This is a customization of the Genesis Sample created for the Genesis Framework. It features a flexible CSS Grid layout, enhanced responsive navigation, and SASS files for quick development.
+This is a customization of the Genesis Sample created for the Genesis Framework. It features a flexible CSS Grid layout, enhanced responsive navigation, and SCSS files for quick development.
 
 Github Project Link: https://github.com/danbru1989/bds-starter-theme/
 
