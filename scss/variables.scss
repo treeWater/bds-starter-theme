@@ -1,0 +1,60 @@
+/* ========== DEFINE VARIABLES HERE ========== */
+
+
+
+/* ===== Colors ===== */
+
+  // Descriptive Color Variables
+
+    $lightgrey  : rgb(240,240,240);
+    $grey       : rgb(220,220,220);
+    $blue       : rgb(60,150,210);
+    $black      : rgb(50,50,50);
+    $green      : rgb(100,200,0);
+    $red        : rgb(200,50,0);
+
+  // Functional Color Variables
+
+    $color-primary           : $blue;       // Primary bright color
+    $color-secondary         : $lightgrey;  // Secondary bright color
+    $color-tertiary          : $lightgrey;  // Primary light color
+    $color-quaternary        : $black;      // Primary dark color
+
+    $color-text-dark         : $black;
+    $color-text-light        : $lightgrey;
+
+    $color-link-dark         : lighten($blue, 10%);
+    // $color-link-dark-hover   : darken($blue,20%); // Need to set
+
+    $color-link-light        : lighten($blue, 20%);
+    // $color-link-light-hover  : $orange; // Need to set
+
+    $color-shadow            : rgba(0,0,0,.5);
+
+
+
+
+/* ===== Font Stacks ===== */
+
+  $font-stack-primary        : 'Open Sans', Verdana, sans-serif;
+  $font-stack-secondary      : 'Roboto Slab', Palatino, Times, serif;
+
+
+
+/* ===== Standard Whitespace (Padding and Margins) ===== */
+
+  $whitespace-mobile        : 15px;
+  $whitespace-standard      : 30px;
+
+
+
+/* ===== Asset Paths ===== */
+
+  $path-images  :   '../images';
+
+
+
+
+/* ===== Media Query Breakpoints ===== */
+
+  // See media-queries.scss for break point variables

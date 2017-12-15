@@ -1,0 +1,71 @@
+/* ========== ADD MEDIA QUERY CODE HERE ========== */
+
+
+
+
+/* ===== Breakpoints ===== */
+
+  // Descriptive Breakpoint Variables
+
+  $break-point-xs    : 1px;
+  $break-point-s     : 320px;
+  $break-point-ms    : 480px;
+  $break-point-ml    : 600px;
+  $break-point-l     : 768px;
+  $break-point-xl    : 1024px;
+  $break-point-xxl   : 1200px;
+  $break-point-xxxl  : 1600px;
+
+  // Functional Breakpoint Variables
+
+  $breakpoint-primary    : ml;
+  $breakpoint-secondary  : l;
+  $breakpoint-tertiary   : xl;
+
+
+/* ===== Media Queries ===== */
+@mixin mq($break-point) { // Use @include mq(xs) for widths of 1px through 320px
+  @if $break-point == "xs" {
+    @media (min-width: #{$break-point-xs}) and (max-width: #{$break-point-s}) {
+      @content;
+    }
+  }
+  @else if $break-point == "s" { // Use @include mq(s) {} for widths of 321px through 479px
+    @media (min-width: #{$break-point-s +1}) {
+      @content;
+    }
+  }
+  @else if $break-point == "ms" { // Use @include mq(ms) {} for widths of 480px through 599px
+    @media (min-width: #{$break-point-ms}) {
+      @content;
+    }
+  }
+  @else if $break-point == "ml" { // Use @include mq(ml) {} for widths of 600px through 767px
+    @media (min-width: #{$break-point-ml}) {
+      @content;
+    }
+  }
+  @else if $break-point == "l" { // Use @include mq(s) {} for widths of 768px through 1023px
+    @media (min-width: #{$break-point-l}) {
+      @content;
+    }
+  }
+  @else if $break-point == "xl" { // Use @include mq(s) {} for widths of 1024px through 1199px
+    @media (min-width: #{$break-point-xl}) {
+      @content;
+    }
+  }
+  @else if $break-point == "xxl" { // Use @include mq(s) {} for widths of 1200px or greater
+    @media (min-width: #{$break-point-xxl}) {
+      @content;
+    }
+  }
+  @else if $break-point == "xxxl" { // Use @include mq(s) {} for widths of 1600px or greater
+    @media (min-width: #{$break-point-xxxl}) {
+      @content;
+    }
+  }
+  @else {
+    @error "Whoops! No media query value could be retrieved with #{$break-point}"
+  }
+}

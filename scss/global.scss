@@ -1,0 +1,667 @@
+/* ========== PLACE GLOBAL STYLES HERE ========== */
+
+
+
+
+/* ===== TABLE OF CONTENTS =====
+– Default Elements & Styles
+  – Links
+  – Headings
+  – Titles
+  – Paragraphs
+  – Bold and Italic Text
+  – Blockquotes
+  – Lists
+  – Dividers
+  – Images
+    - Uncaptioned Images
+    - Captioned Images
+    - Avatars
+  – Galleries
+  – Tables
+  – Forms
+  – Transitions
+  – Genesis Elements
+    - Breadcrumbs
+    – Search Form
+  – Widgets
+    – Sidebar Widgets
+    – Header Widgets
+    – Footer Widgets
+    - Individual Widgets
+
+– Structure & Layout
+  – Column Classes
+  – Float Clearing
+
+– Primary Containers & Styles
+  – Wraps
+  – Site Header
+    - Title Area
+    – Header Widget Area
+  – Site Navigation
+  – Site Inner
+    – Content Area
+      – Entry Meta
+      – Pagination
+      – Comments
+    – Sidebars
+  – Site Footer
+    – Footer Widget Area
+*/
+
+
+
+
+/* ========== Default Elements & Styles ========== */
+
+    html {
+      font-size: 62.5%; /* 10px browser default */
+    }
+
+    // Site Font Size
+    $font-size : 1.6rem;
+
+    body {
+      background: $color-tertiary;
+      color: $color-text-dark;
+      font-family: $font-stack-primary;
+      font-size: $font-size;
+      font-weight: 400;
+      line-height: 1.625;
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      @include mq(s) {font-size: 1.5rem;}
+      @include mq(ms) {font-size: 1.6rem;}
+    }
+
+    /* Chrome fix */
+    body > div {
+      font-size: $font-size;
+    }
+
+  /* ===== Links ===== */
+
+    a {
+      color: $color-link-dark;
+      text-decoration: none;
+      &:hover, &:focus {
+        color: $color-link-light;
+        text-decoration: none;
+      }
+    }
+
+  /* ===== Headings ===== */
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: $font-stack-secondary;
+      font-weight: 600;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    // Default Heading Font Sizes
+      h1 {font-size: 3.6rem;}
+      h2 {font-size: 3rem;}
+      h3 {font-size: 2.4rem;}
+      h4 {font-size: 2rem;}
+      h5 {font-size: 1.8rem;}
+      h6 {font-size: 1.6rem;}
+
+  /* ===== Titles ===== */
+
+    .archive-description .entry-title,
+    .archive-title,
+    .author-box-title {
+      font-size: 2.5rem;
+    }
+
+    .entry-title {
+      font-size: 3.6rem;
+      &:hover, &:focus {
+        color: $color-link-dark;
+      }
+    }
+
+    .entry-title a,
+    .sidebar .widget-title a {
+      color: $color-text-dark;
+    }
+
+    .widget-title {
+      font-size: 3rem;
+      margin-bottom: $whitespace-mobile;
+    }
+
+  /* ===== Paragraphs ===== */
+
+    p {
+      margin: 0 0 $whitespace-standard;
+      padding: 0;
+    }
+
+  /* ===== Bold and Italic Text ===== */
+
+    b,
+    strong {
+      font-weight: 700;
+    }
+
+    cite,
+    em,
+    i {
+      font-style: italic;
+    }
+
+  /* ===== Blockquotes ===== */
+
+    blockquote {
+      margin: $whitespace-standard;
+      border-left: 5px solid $color-primary;
+      p {margin: 0;}
+    }
+
+    blockquote::before {
+      content: "\201C";
+      display: block;
+      font-size: 3rem;
+      height: 0;
+      left: -20px;
+      position: relative;
+      top: -10px;
+    }
+
+    mark {background: $color-tertiary; color: $color-text-dark;}
+
+  /* ===== Lists ===== */
+
+    ol, ul {margin: 0; padding: 0;} // Reset lists
+
+    ol {list-style-type: decimal;}
+    ul {list-style-type: square;}
+
+    // Entry Content & Widget Lists
+    .entry-content,
+    .widget {
+      ol, ul, {
+        padding-left: $whitespace-standard;
+      }
+      li {margin-bottom: $whitespace-mobile - 5px;}
+    }
+
+    .entry-content ol,
+    .entry-content ul {
+      margin: $whitespace-standard 0;
+    }
+
+  /* ===== Dividers ===== */
+
+    hr {
+      border: 0;
+      border-collapse: collapse;
+      border-top: 1px solid $color-tertiary;
+      clear: both;
+      margin: 0;
+    }
+
+  /* ===== Images ===== */
+
+    /**
+      * Style images in the content area here.
+      *
+      * The "alignnone" class is treated the same as aligncenter for simplicity and to prevent user error
+      *
+      * a.alignleft, a.alignright, a.aligncenter are for images in the Genesis featured posts / pages widget
+      *
+      */
+
+    // Main Image Styles
+    .entry img,
+    .widget img {
+    }
+
+    // Uncaptioned Images
+    img.alignnone,
+    img.alignright,
+    img.alignleft,
+    .aligncenter {
+      display: block;
+      float: none;
+      margin: $whitespace-mobile auto;
+      text-align: center;
+    }
+    @include mq($breakpoint-primary) {
+      img.alignright {float: right; margin: $whitespace-standard 0 $whitespace-standard $whitespace-standard;}
+      img.alignleft {float: left; margin: $whitespace-standard $whitespace-standard $whitespace-standard 0;}
+      .aligncenter {text-align: center; margin: $whitespace-standard auto;}
+
+    }
+
+    // Captioned Images
+    .wp-caption {
+      display: block;
+      margin: $whitespace-mobile auto;
+      &.alignright,
+      &.alignleft {
+        float: none;
+        margin: $whitespace-mobile auto;
+      }
+    }
+    @include mq($breakpoint-primary) {
+      .wp-caption.alignright {float: right; margin: $whitespace-standard 0 $whitespace-standard $whitespace-standard;}
+      .wp-caption.alignleft {float: left; margin: $whitespace-standard $whitespace-standard $whitespace-standard 0;}
+    }
+
+    .gallery-caption,
+    .wp-caption-text {
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-align: center;
+      margin: 0;
+    }
+
+    // Images in the Genesis featured posts / pages widget
+    .alignright {float: right; text-align: right;}
+    .alignleft {float: left; text-align: left;}
+
+    a.aligncenter img, a.alignnone {display: block; margin: 0 auto;}
+
+    // Avatars
+    .avatar {
+      .alignleft & {margin-right: $whitespace-mobile;}
+      .alignright & {margin-left: $whitespace-mobile;}
+
+      .author-box & {
+        float: left;
+        margin-right: $whitespace-standard;
+      }
+
+      .comment & {
+        float: left;
+        margin: 0 $whitespace-mobile 0 0;
+      }
+    }
+
+  /* ===== Galleries ===== */
+
+    .gallery {
+      display: grid;
+      grid-gap: $whitespace-mobile;
+      @include mq($breakpoint-primary) {grid-gap: $whitespace-standard;}
+    }
+
+  /* ===== Tables ===== */
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      line-height: 2;
+      margin-bottom: $whitespace-standard;
+      width: 100%;
+      word-break: break-all;
+    }
+
+    tbody {
+      border-bottom: 1px solid $color-tertiary;
+    }
+
+    td,
+    th {
+      text-align: left;
+    }
+
+    td {
+      border-top: 1px solid $color-tertiary;
+      padding: 6px;
+    }
+
+    th {
+      font-weight: 600;
+      padding: 6px;
+    }
+
+    td:first-child,
+    th:first-child {
+      padding-left: 0;
+    }
+
+  /* ===== Forms ===== */
+
+    // See Forms.scss
+
+    // Add Components Here – See Forms.scss/Individual Forms
+
+  /* ===== Transitions ===== */
+
+    a,
+    button,
+    input:focus,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"],
+    textarea:focus,
+    .button,
+    .gallery img {
+      transition: all .2s ease-in-out;
+    }
+
+  /* ===== Genesis Elements ===== */
+
+    .after-entry,
+    .archive-description,
+    .author-box {
+      background-color: white;
+      padding: $whitespace-mobile;
+      margin-bottom: $whitespace-mobile;
+      @include mq($breakpoint-primary) {
+        padding: $whitespace-standard;
+        margin-bottom: $whitespace-standard;
+      }
+    }
+
+    .archive-description p:last-child,
+    .author-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    // Breadcrumbs
+    .breadcrumb {
+      background: white;
+      padding: $whitespace-mobile;
+      margin-bottom: 1px;
+      @include mq($breakpoint-primary) {padding: $whitespace-mobile $whitespace-standard;}
+    }
+
+    // Search Form
+    .entry-content .search-form {
+    	margin-bottom: 40px;
+    	width: 50%;
+    }
+
+  /* ===== Widgets ===== */
+
+    .widget {
+      word-wrap: break-word;
+      padding: $whitespace-mobile;
+      @include mq($breakpoint-primary) {padding: $whitespace-standard;}
+      & p:last-child, & ul > li:last-of-type, .widget-area &:last-of-type {margin-bottom: 0;} // Removes last margins
+    }
+
+    /* ===== Sidebar Widgets ===== */
+
+      .sidebar .widget {
+        background: white;
+        margin-bottom: $whitespace-mobile;
+        @include mq($breakpoint-secondary) {margin-bottom: 0;}
+        @include mq($breakpoint-tertiary) {margin-bottom: $whitespace-standard;}
+      }
+
+    /* ===== Header Widgets ===== */
+
+      // @include header-widgets;
+
+    /* ===== Footer Widgets ===== */
+
+      // @include footer-widgets;
+
+    /* ===== Individual Widgets ===== */
+
+      // See Mixins.scss/Individual Widgets
+
+      @include genesis-featured-content;
+      @include wp-calendar;
+
+
+
+
+/* ========== Structure & Layout ========== */
+
+  /* ===== Column Classes ===== */
+
+    .col {
+      display: grid;
+      grid-gap: $whitespace-mobile;
+      hyphens: auto;
+      @include mq($breakpoint-primary) {grid-gap: $whitespace-standard;}
+    }
+
+    .col-2 {grid-template-columns: repeat(2, 1fr);}
+    .col-3 {grid-template-columns: repeat(3, 1fr);}
+    .col-4 {grid-template-columns: repeat(4, 1fr);}
+    .col-5 {grid-template-columns: repeat(5, 1fr);}
+    .col-6 {grid-template-columns: repeat(6, 1fr);}
+
+  /* ===== Float Clearing ===== */
+
+    .clearfix {
+      &::before, &::after {content: " "; display: table;}
+      &::after {clear: both;}
+    }
+
+
+/* ========== Primary Containers & Styles ========== */
+
+  /* ===== Wraps ===== */
+
+    .wrap {
+      margin: 0 auto;
+      max-width: 1280px;
+    }
+
+  /* ===== Site Header ===== */
+
+    .site-header {
+      background: white;
+
+      .wrap {
+        display: grid;
+        padding: $whitespace-standard;
+      }
+    }
+
+    /* ===== Title Area ===== */
+
+      // See Mixins.scss/Site Header
+
+      @include title-description;
+      // @include logo; // See functions.php/Site Header
+
+
+
+
+  /* ===== Site Navigation ===== */
+
+    $nav-color               : $color-text-light;
+    $nav-bg-color            : $color-primary;
+    $nav-color-hover         : $color-text-light;
+    $nav-bg-color-hover      : lighten($color-primary, 10%);
+    $nav-breakpoint          : $breakpoint-primary; // Change to $breakpoint-tertiary for header navigation
+    $nav-item-padding        : $whitespace-mobile + 5;
+
+    // Add Components Here – See Mixins.scss/Site Navigation
+    @include site-navigation;
+
+  /* ===== Site Inner ===== */
+
+    .site-inner {
+      word-wrap: break-word;
+      padding: $whitespace-mobile;
+      margin: 0 auto;
+      max-width: 1280px;
+      @include mq($breakpoint-secondary) {padding: $whitespace-standard;}
+      @include mq(xxl) {.sidebar-content-sidebar & {max-width: 1600px;}}
+      .content-sidebar-wrap {
+        display: grid;
+        grid-gap: $whitespace-mobile;
+        @include mq($breakpoint-secondary) {grid-gap: $whitespace-standard;}
+        @include mq($breakpoint-tertiary) {
+          .content-sidebar & {grid-template-columns: auto 350px;}
+          .sidebar-content & {grid-template-columns: 350px auto; .content {order: 2;}}
+          .sidebar-content-sidebar & {grid-template-columns: auto 350px;}
+          .full-width-content & {grid-template-columns: auto;}
+        }
+        @include mq(xxl) {.sidebar-content-sidebar & {grid-template-columns: 300px auto 350px;}}
+      }
+    }
+
+    // Wide Pages
+    .wide-page .site-inner {
+      max-width: 1680px;
+    }
+
+    // Landing Pages
+    .landing-page .site-inner {
+      max-width: 800px;
+    }
+
+    /* ===== Content Area ===== */
+
+      .content > * {
+        margin-bottom: $whitespace-mobile;
+        @include mq($breakpoint-primary) {margin-bottom: $whitespace-standard;}
+        &:last-child {margin-bottom: 0;}
+      }
+
+      .entry {
+        background: white;
+        padding: $whitespace-mobile;
+        @include mq($breakpoint-primary) {padding: $whitespace-standard;}
+      }
+
+      .entry-content {
+        .wp-audio-shortcode,
+        .wp-playlist,
+        .wp-video {
+        	margin: 0 0 $whitespace-standard;
+        }
+      }
+
+      /* ===== Entry Meta ===== */
+
+        .entry-header .entry-meta {
+          font-size: 1.4rem;
+          font-weight: 600;
+          border-top: 1px solid $color-tertiary;
+          margin-bottom: $whitespace-standard;
+        }
+
+        .entry-comments-link::before {
+        	content: "\2014";
+        	margin: 0 6px 0 2px;
+        }
+
+        .entry-footer .entry-meta {
+          font-size: 1.4rem;
+          font-weight: 600;
+          text-align: center;
+          line-height: 2;
+          margin-bottom: 0;
+        }
+
+      /* ===== Pagination ===== */
+
+        .pagination {
+          li {display: inline;}
+          a {
+            display: inline-block;
+            color: $color-text-dark;
+            background: white;
+            padding: $whitespace-mobile - 5 $whitespace-mobile;
+            &:hover, &:focus, .active & {
+              color: $color-text-light;
+              background: $color-primary;
+            }
+          }
+        }
+
+      /* ===== Comments ===== */
+
+        .entry-comments,
+        .comment-respond,
+        .entry-pings {
+          background: white;
+          padding: $whitespace-mobile;
+          @include mq($breakpoint-primary) {
+            padding: $whitespace-standard;
+          }
+          h3 {font-size: 3rem; line-height: 1;}
+        }
+
+        .comment-list {
+          margin-top: $whitespace-standard;
+          &, .comment ul {list-style: none;}
+        }
+
+        .comment[class*="depth"] {
+          padding-left: $whitespace-mobile;
+          @include mq($breakpoint-primary) {padding-left: $whitespace-standard;}
+        }
+        .comment[class*="depth-1"] {padding-left: 0;}
+
+        .comment article {margin-bottom: $whitespace-standard;}
+
+        .comment-header {
+          margin-bottom: $whitespace-mobile;
+          &::before, &::after {content: " "; display: table;} // Clearfix the avatar
+          &::after {clear: both;}
+          .comment-author {font-size: 1.2em; font-weight: 700;}
+          .comment-meta {font-size: .9em;}
+          p {margin-bottom: 0;}
+        }
+        .comment-content {
+          border-bottom: 1px solid $color-tertiary;
+          .alert {font-size: .9em; font-style: italic; margin-bottom: $whitespace-mobile;}
+        }
+
+        // Comment Form
+        .comment-respond {
+          .comment-reply-title {margin-bottom: 10px;}
+          label {display: block;}
+          input {@include mq($breakpoint-primary) {max-width: 50%;}}
+          .form-submit {margin-bottom: 0;}
+        }
+
+          // Comment Reply Form
+          .comment-list .comment-respond {
+            padding-bottom: $whitespace-standard * 2;
+          }
+
+        .entry-pings .reply {display: none;}
+
+    /* ===== Sibebars ===== */
+
+      // Sidebar Primary
+      .sidebar {
+        width: 100%;
+        max-width: 450px; // Keep widgets from getting too wide on small screens
+        justify-self: center;
+        @include mq($breakpoint-secondary) { // Horizontal widget view
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: $whitespace-standard;
+          max-width: 100%;
+        }
+        @include mq($breakpoint-tertiary) {display: block;} // Return to vertical sidebar
+      }
+
+      .sidebar-primary .widget:nth-of-type(n+3) {
+        @include mq($breakpoint-secondary) {display: none;} // Hide all but first two widgets horizontal view
+        @include mq($breakpoint-tertiary) {display: block;} // Show all widgets in vertical sidebar
+      }
+
+      // Sidebar Secondary
+      .sidebar-secondary {
+        display: none;
+        @include mq(xxl) {display: block;} // Show sidebar-secondary only on large screens
+      }
+
+  /* ===== Site Footer ===== */
+
+    .site-footer {
+      color: $color-text-light;
+      background: $color-quaternary;
+      text-align: center;
+      padding: $whitespace-standard 0;
+      @include mq(xs) {font-size: 1.4rem;}
+      p {line-height: 2.5; margin-bottom: 0;}
+    }

@@ -1,0 +1,24 @@
+/* ========== MAIN SCSS CODE COMPILATION FILE ========== */
+
+// Add Normalize.css
+@import "normalize.scss";
+
+// Add Variables
+@import "variables.scss";
+
+// Add Media Queries
+@import "media-queries.scss";
+
+// Add Mixins
+@import "mixins.scss";
+
+// Add Form Styles
+@import "forms.scss";
+
+// Add Global Styles
+@import "global.scss";
+
+// Add Page Styles
+@import "pages/front-page.scss";
+@import "pages/blog.scss";
+@import "pages/404.scss";

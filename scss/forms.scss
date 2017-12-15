@@ -1,0 +1,549 @@
+/* ===== NOTES ===== */
+
+/**
+  *
+  * This Brubaker Design Services' CSS Grid conversion for Gravity Forms.
+  *
+  * BE SURE to disable Output CSS in Gravity Forms Settings.
+  *
+  */
+
+
+
+
+/* ===== TABLE OF CONTENTS =====
+- Variable Definitions
+– General Forms
+– Gravity Forms
+  – Form Header
+  – Form Body
+  – Form Footer
+  – CSS Ready Classes
+  – Specific Fields
+– Individual Forms
+*/
+
+
+
+
+/* ===== CSS Ready Classes =====
+– gf_span_2
+– gf_span_all
+– gf_list_columns
+– gf_scroll_text
+– gf_hide_ampm
+– gf_hide_charleft
+*/
+
+
+
+
+/* ========== DEFINE VARIABLES HERE ========== */
+
+  $form-breakpoint                 : $breakpoint-primary;
+  $form-grid-gap                   : $whitespace-standard;
+
+  // Form Wrap
+  $form-color                      : $color-text-dark;
+  $form-background                 : none;
+  $form-font-size                  : 1.8rem;
+  $form-padding                    : 0;
+  $form-margin                     : 0;
+  $form-border                     : none;
+  $form-border-radius              : 0;
+
+  // Form Header
+  $form-header-text-align          : left;
+  $form-header-padding             : $whitespace-standard 0;
+  $form-header-margin              : 0;
+  $form-header-border-bottom       : none;
+
+  // Inputs
+  $form-input-color                : $color-text-dark;
+  $form-input-background           : $color-secondary;
+  $form-input-padding              : 8px;
+  $form-input-border               : 1px solid $grey;
+  $form-input-border-radius        : 0;
+  $form-input-box-shadow           : none;
+  // Inputs – Hover & Focus
+  $form-input-border-focus         : 1px solid $color-primary;
+  $form-input-box-shadow-focus     : none;
+    // Labels
+    $form-label-font-size          : 1.1em;
+    $form-label-font-weight        : 600;
+    // Sub-Labels
+    $form-sublabel-color           : $form-color;
+    $form-sublabel-font-size       : .8em;
+    // Descriptions
+    $form-description-color        : $form-color;
+    $form-description-font-size    : .9em;
+    // Required
+    $form-required-color           : $red;
+    // Errors
+    $form-error-color              : $red;
+    $form-error-background         : rgba($red,.25);
+
+  // Form Footer
+  $form-footer-text-align          : center;
+  $form-footer-padding             : $whitespace-standard 0;
+  $form-footer-margin              : 0;
+  $form-footer-border-top          : none;
+
+  // Buttons
+  $form-button-color               : $color-tertiary;
+  $form-button-background          : $color-primary;
+  $form-button-font-size           : 2rem;
+  $form-button-font-weight         : normal;
+  $form-button-padding             : 10px 30px;
+  $form-button-border              : none;
+  $form-button-border-radius       : 0;
+  $form-button-box-shadow          : none;
+  // Buttons – Hover & Focus
+  $form-button-color-hover         : $color-tertiary;
+  $form-button-background-hover    : lighten($color-primary, 10%);
+  $form-button-border-hover        : none;
+  $form-button-box-shadow-hover    : none;
+
+  // Paging – Progress Bar
+  $form-pb-color                   : $color-text-light;
+  $form-pb-background-color        : $color-primary;
+  $form-pb-font-size               : 1em;
+  $form-pb-padding-bottom          : 0;
+  $form-pb-margin-bottom           : $form-grid-gap;
+  $form-pb-border-bottom           : none;
+
+  // Paging – Steps (Style .gf_page_steps below)
+
+    /* ===== Specific Fields ===== */
+
+      // Datepicker
+      $form-dp-background                       : $color-secondary;
+      $form-dp-border-radius                    : 3px;
+      $form-dp-box-shadow                       : 0 2px 5px $color-shadow;
+      $form-dp-calendar-day-color-hover         : $color-secondary;
+      $form-dp-calendar-day-background-hover    : $color-primary;
+      $form-dp-calendar-today-color             : $color-quaternary;
+      $form-dp-calendar-today-background        : lighten($color-tertiary, 5%);
+
+
+
+
+/* ========== General Forms ========== */
+
+  input,
+  select,
+  textarea {
+    color: $form-input-color;
+    background: $form-input-background;
+    padding: $form-input-padding;
+    border: $form-input-border;
+    border-radius: $form-input-border-radius;
+    box-shadow: $form-input-box-shadow;
+    width: 100%;
+  }
+
+  input:focus,
+  textarea:focus {
+    border: $form-input-border-focus;
+    box-shadow: $form-input-box-shadow-focus;
+    outline: none;
+  }
+
+  input[type="checkbox"],
+  input[type="image"],
+  input[type="radio"] {
+  	width: auto;
+  }
+
+  button,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"],
+  .button {
+    display: inline-block;
+    color: $form-button-color;
+    background: $form-button-background;
+    font-size: $form-button-font-size;
+    font-weight: $form-button-font-weight;
+    padding: $form-button-padding;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: auto;
+    cursor: pointer;
+    white-space: normal;
+    text-decoration: none;
+    border: $form-button-border;
+    border-radius: $form-button-border-radius;
+    box-shadow: $form-button-box-shadow;
+    &:hover,
+    &:focus {
+      color: $form-button-color-hover;
+      background: $form-button-background-hover;
+      border: $form-button-border-hover;
+      box-shadow: $form-button-box-shadow-hover;
+    }
+  }
+
+  .site-container button:disabled,
+  .site-container button:disabled:hover,
+  .site-container input:disabled,
+  .site-container input:disabled:hover,
+  .site-container input[type="button"]:disabled,
+  .site-container input[type="button"]:disabled:hover,
+  .site-container input[type="reset"]:disabled,
+  .site-container input[type="reset"]:disabled:hover,
+  .site-container input[type="submit"]:disabled,
+  .site-container input[type="submit"]:disabled:hover {
+  	cursor: not-allowed;
+  }
+
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button {
+  	display: none;
+  }
+
+
+
+
+/* ========== Gravity Forms ========== */
+
+  .gform_wrapper {
+    color: $form-color;
+    background: $form-background;
+    font-size: $form-font-size;
+    padding: $form-padding;
+    border: $form-border;
+    border-radius: $form-border-radius;
+  }
+
+  /* ===== Form Header ===== */
+
+    .gform_heading {
+      text-align: $form-header-text-align;
+      padding: $form-header-padding;
+      margin: $form-header-margin;
+      border-bottom: $form-header-border-bottom;
+    }
+
+  /* ===== Form Body ===== */
+
+    .gform_body { // Contains the main form content
+      .gform_fields { // Unordered list used to structure all of the form elements
+        display: grid;
+        grid-gap: $form-grid-gap;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        @include mq($form-breakpoint) {grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));}
+      }
+    }
+
+    .gfield { // Individual list items (li) containing each form element
+      margin-bottom: 0 !important;
+
+      .gfield_label {font-size: $form-label-font-size; font-weight: $form-label-font-weight;}
+      .gfield_required {color: $form-required-color; padding-left: 3px;}
+      .ginput_container label {color: $form-sublabel-color; font-size: $form-sublabel-font-size;} // Sub Labels
+      .gfield_description {color: $form-description-color; font-size: $form-description-font-size;}
+      &.gform_hidden, &.gfield_visibility_hidden {display: none !important;}
+    }
+
+    // Left Labeling
+      .gform_fields.left_label {
+        @include mq($form-breakpoint) {justify-content: center; grid-template-columns: auto;}
+        .gfield {
+          @include mq($form-breakpoint) {
+            display: grid;
+            grid-gap: $form-grid-gap;
+            grid-template-columns: 1fr 3fr;
+            max-width: 800px;
+          }
+        }
+      }
+
+    // Right Labeling
+      .gform_fields.right_label {
+        @include mq($form-breakpoint) {justify-content: center; grid-template-columns: auto;}
+        .gfield {
+          @include mq($form-breakpoint) {
+            display: grid;
+            grid-gap: $form-grid-gap;
+            grid-template-columns: 3fr 1fr;
+            max-width: 800px;
+            label {order: 2; text-align: right;}
+          }
+        }
+      }
+
+  /* ===== Form Footer ===== */
+
+    .gform_footer,
+    .gform_page_footer {
+      text-align: $form-footer-text-align;
+      padding: $form-footer-padding;
+      margin: $form-footer-margin;
+      border-top: $form-footer-border-top;
+      img {background: none !important; border: none !important; box-shadow: none !important;}
+    }
+
+  /* ===== CSS Ready Classes ===== */
+
+    // Span two columns
+    .gf_span_2 {@include mq($form-breakpoint) {grid-column: span 2;}}
+
+    // Span all columns
+    .gf_span_all {grid-column: 1 / -1;}
+
+    // Enable checkbox and radio columns
+    .gf_list_columns ul {display: grid; grid-column-gap: $form-grid-gap; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));}
+
+    // Converts a Section Break into a scrollable text box
+    .gf_scroll_text .gsection_description {height: 250px; overflow-y: scroll;}
+
+    // Hides the AM / PM selector on the time field
+    .gf_hide_ampm .gfield_time_ampm {display: none !important;}
+
+    // Hides the characters left counter beneath paragraph text fields when using the maximum characters option
+    .gf_hide_charleft .charleft {display: none !important;}
+
+  /* ===== Specific Fields ===== */
+
+    // Paging
+    .gf_progressbar_wrapper {
+      padding-bottom: $form-pb-padding-bottom;
+      margin-bottom: $form-pb-margin-bottom;
+      border-bottom: $form-pb-border-bottom;
+      .gf_progressbar_title {font-size: .9em; font-weight: normal; margin-bottom: 5px;}
+      .gf_progressbar {
+        position: relative;
+        background: rgba(0,0,0,.1);
+        font-size: $form-pb-font-size;
+        padding: 10px;
+        border-radius: 25px;
+        box-shadow: inset 0 0 1px 1px rgba(0,0,0,.05);
+        &:after {
+          position: absolute;
+          display: block;
+          content: "";
+          background-color: rgba(0,0,0,.1);
+          width: calc(100% - 20px);
+          height: calc(100% - 20px);
+          top: 10px;
+          left: 10px;
+          box-shadow: inset 0 0 2px 2px rgba(0,0,0,.05);
+          border-radius: 20px;
+          z-index: 990;
+        }
+        .gf_progressbar_percentage {
+          color: $form-pb-color;
+          background: repeating-linear-gradient(-45deg,rgba(0,0,0,0),rgba(0,0,0,0) 10px,rgba(0,0,0,.1) 10px,rgba(0,0,0,.1) 20px),linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,.3));
+          background-color: $form-pb-background-color;
+          font-size: $form-pb-font-size;
+          text-align: right;
+          text-shadow: 0 1px 1px rgba(0,0,0,.5);
+          border-radius: 20px;
+          z-index: 999;
+          span {padding: 0 5px;}
+        }
+      }
+    }
+
+    .gf_page_steps {
+      padding-bottom: 10px;
+      margin-bottom: $form-grid-gap;
+      border-bottom: 2px solid $form-color;
+      .gf_step {
+        line-height: 2;
+        .gf_step_number {
+          font-size: 1.2em;
+          font-weight: 700;
+          padding-right: 5px;
+        }
+      }
+      .gf_step_active {font-weight: 700;}
+      .gf_step_pending {color: lighten($form-color, 50%);}
+      @include mq($form-breakpoint) {
+        display: flex;
+        .gf_step {margin-right: $form-grid-gap;}
+        .gf_step:last-of-type {margin-right: 0;}
+      }
+    }
+
+    // Section Break
+    .gsection {
+      grid-column: 1 / -1;
+      .gsection_title {
+        text-align: left;
+        margin-bottom: $whitespace-mobile;
+        border-bottom: 2px solid $form-color;
+      }
+    }
+
+    // Honeypot
+    .gform_validation_container {
+      display: none !important;
+      position: absolute !important;
+      left: -9000px;
+    }
+
+    // Name Field
+    .ginput_container_name {
+      @include mq($form-breakpoint) {
+        display: grid;
+        grid-gap: $form-grid-gap;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+    }
+
+    // Address Field
+    .ginput_container_address {
+      @include mq($form-breakpoint) {
+        display: grid;
+        grid-gap: $form-grid-gap;
+        grid-template-columns: repeat(2, 1fr);
+        .address_line_1 {grid-column: span 2}
+        .address_line_2 {grid-column: span 2}
+      }
+    }
+
+    // Time Field
+    .clear-multi {
+      display: grid;
+      grid-gap: $form-grid-gap - 15;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .gfield_time_hour i {display: none;}
+
+
+    // List Fields
+    .ginput_container_list {
+      .gfield_list_container {margin-bottom: 0;}
+    }
+
+    // Dropdown Fields
+    select {
+      background: linear-gradient($form-input-background, darken($form-input-background, 8%), darken($form-input-background, 20%));
+      border: none;
+    }
+
+    // Multiselect Fields
+    .ginput_container_multiselect select {
+      background: $form-input-background;
+      border: $form-input-border;
+      border-radius: $form-input-border-radius;
+    }
+
+    // Radio and Checkbox Fields
+    .ginput_container_radio .gfield_radio,
+    .ginput_container_checkbox .gfield_checkbox {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {margin-bottom: 0;}
+      label {color: $form-color; font-size: 1em; margin-left: 10px;}
+    }
+
+    // Validation and Error Messages
+    .gform_confirmation_wrapper {
+      text-align: center;
+      margin: $form-grid-gap 0;
+    }
+
+    .validation_error {
+      color: $form-error-color;
+      font-size: 1em;
+      font-weight: bold;
+      margin-bottom: 20px;
+      border-top: 2px solid $form-error-color;
+      border-bottom: 2px solid $form-error-color;
+      padding: 10px 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .gfield_error {
+      input {
+        background: $form-error-background;
+        border-color: $form-error-color;
+      }
+      .validation_message {
+        color: $form-error-color;
+        font-size: .8em;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+
+    // Datepicker
+    #ui-datepicker-div {
+      display: none;
+      background: $form-dp-background;
+      width: 250px;
+      padding: 5px;
+      border-radius: $form-dp-border-radius;
+      box-shadow: $form-dp-box-shadow;
+
+      // Datepicker Header
+      .ui-datepicker-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+      }
+      .ui-datepicker-prev {
+        cursor: pointer;
+        width: 10%;
+        text-align: center;
+        .ui-icon {font-size: 0;}
+        .ui-icon:before {
+          font-size: 2.5rem;
+          font-family: 'dashicons';
+          content: '\f341';
+        }
+        &.ui-state-disabled {display:none;}
+      }
+      .ui-datepicker-next {
+        cursor: pointer;
+        width: 10%;
+        text-align: center;
+        order: 2;
+        .ui-icon {font-size: 0;}
+        .ui-icon:before {
+          font-size: 2.5rem;
+          font-family: 'dashicons';
+          content: '\f345';
+        }
+        &.ui-state-disabled {display:none;}
+      }
+      .ui-datepicker-title {
+        display: flex;
+        width: 70%;
+        .ui-datepicker-month {margin-right: 5px;}
+      }
+
+      // Datepicker Calendar
+      table {width: 100%; margin-bottom: 0;}
+      thead {border-bottom: 2px solid $color-tertiary;}
+      thead th {text-align: center;}
+      td {
+        padding: 0;
+        a {
+          display: block;
+          text-align: center;
+          border-radius: 3px;
+          &:hover {
+            color: $form-dp-calendar-day-color-hover;
+            background: $form-dp-calendar-day-background-hover;
+          }
+        }
+      }
+      .ui-datepicker-today a {
+        color: $form-dp-calendar-today-color;
+        background: $form-dp-calendar-today-background;
+      }
+    }
+
+
+
+
+/* ========== Individual Forms ========== */

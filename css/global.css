@@ -1,0 +1,69 @@
+@charset "UTF-8";
+/* ========== PLACE GLOBAL STYLES HERE ========== */
+/* ===== TABLE OF CONTENTS =====
+––– Default Elements & Styles
+  –– Links
+  –– Headings
+  –– Titles
+  –– Paragraphs
+  –– Bold and Italic Text
+  –– Blockquotes
+  –– Lists
+  –– Dividers
+  –– Images
+    - Uncaptioned Images
+    - Captioned Images
+    - Avatars
+  –– Galleries
+  –– Tables
+  –– Transitions
+  –– Genesis Elements
+    - Breadcrumbs
+
+––– Structure & Layout
+  –– Column Classes
+  –– Float Clearing
+
+––– Primary Containers & Styles
+  –– Wraps
+  –– Site Header
+    - Title Area
+  –– Site Navigation
+  –– Site Inner
+    – Content Area
+    – Sidebars & All Widgets
+  –– Site Footer
+*/
+/* ========== Default Elements & Styles ========== */
+/* ===== Links ===== */
+/* ===== Headings ===== */
+/* ===== Titles ===== */
+/* ===== Paragraphs ===== */
+/* ===== Bold and Italic Text ===== */
+/* ===== Blockquotes ===== */
+/* ===== Lists ===== */
+/* ===== Dividers ===== */
+/* ===== Images ===== */
+/* ===== Galleries ===== */
+/* ===== Tables ===== */
+/* ===== Transitions ===== */
+/* ===== Genesis Elements ===== */
+/* ========== Structure & Layout ========== */
+/* ===== Column Classes ===== */
+/* ===== Float Clearing ===== */
+.clearfix::before, .clearfix::after {
+  content: " ";
+  display: table; }
+
+.clearfix::after {
+  clear: both; }
+
+/* ========== Primary Containers & Styles ========== */
+/* ===== Wraps ===== */
+/* ===== Site Header ===== */
+/* ===== Title Area ===== */
+/* ===== Site Navigation ===== */
+/* ===== Site Inner ===== */
+/* ===== Content Area ===== */
+/* ===== Sibebars & All Widgets ===== */
+/* ===== Site Footer ===== */

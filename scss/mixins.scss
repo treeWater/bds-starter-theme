@@ -1,0 +1,330 @@
+/* ========== DEFINE MIXINS HERE ========== */
+
+
+
+
+/* ===== TABLE OF CONTENTS =====
+– Site Header
+  – Title & Description
+  – Logo
+– Site Navigation
+  - Secondary Navigation
+  – Header Navigation
+– Widgets
+  – Header Widgets
+  – Footer Widgets
+  – Individual Widgets
+*/
+
+
+
+
+/* ========== Site Header ========== */
+
+  /* ===== Title & Description ===== */
+
+    @mixin title-description {
+      .site-title {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 0;
+        @include mq($breakpoint-primary) {text-align: left;}
+        a, & a:hover, & a:focus {
+          color: $color-text-dark;
+        }
+      }
+
+      .site-description {
+        text-align: center;
+        margin-bottom: 0;
+        @include mq($breakpoint-primary) {text-align: left;}
+      }
+    }
+
+  /* ===== Logo ===== */
+
+    @mixin logo {
+      .wp-custom-logo {
+        .site-title {text-indent: 0; margin-bottom: 0;}
+        .custom-logo {vertical-align: middle;}
+      }
+    }
+
+
+
+
+/* ========== Site Navigation ========== */
+
+  @mixin site-navigation {
+
+    .nav-primary {
+      display: none;
+      background: $nav-bg-color;
+      @include mq($nav-breakpoint) {display: block;}
+    }
+
+    .genesis-nav-menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      font-weight: 600;
+      line-height: 1;
+      margin: 0 auto;
+      max-width: 1280px;
+      @include mq($nav-breakpoint) {flex-direction: row;}
+
+      .menu-item {
+        display: block;
+        position: relative;
+        @include mq($nav-breakpoint) {
+          &.menu-item-has-children {display: block;}
+        }
+        a {
+          display: block;
+          color: $nav-color;
+          background: $nav-bg-color;
+          padding: $nav-item-padding;
+          @include mq($nav-breakpoint) {padding: $nav-item-padding $nav-item-padding + 5;}
+        }
+        &.sfHover > a, // .sfHover is for styling when submenu is active
+        a:hover, a:focus {
+          color: $nav-color-hover;
+          background: $nav-bg-color-hover;
+        }
+      }
+
+      // Better solution than floating .sub-menu-toggles to the right
+      .menu-item-has-children {
+        display: flex;
+        flex-wrap: wrap;
+        a {flex-grow: 1;}
+      }
+
+      // Add a > to sub-menu items with children
+      @include mq($nav-breakpoint) {
+        .sub-menu .menu-item-has-children > a:after {
+          display: inline-block;
+          float: right;
+          content: "\f347";
+          font-family: dashicons;
+          transform: rotate( -90deg );
+        }
+      }
+
+      .sub-menu {
+        background: $nav-bg-color;
+        display: none;
+        width: 100%;
+        padding-left: $nav-item-padding;
+        border: none;
+        opacity: 1;
+        transition: opacity .4s ease-in-out;
+        @include mq($nav-breakpoint) {
+          position: absolute;
+          width: 200px;
+          padding-left: 0;
+          opacity: 1;
+          left: -9999px;
+          z-index: 99;
+        }
+        a {
+          display: block;
+          padding: $nav-item-padding;
+          word-wrap: break-word;
+          @include mq($nav-breakpoint) {
+            width: 200px;
+          }
+        }
+      }
+      .sub-menu .sub-menu {
+        margin: 0;
+        @include mq($nav-breakpoint) {margin: -56px 0 0 199px;}
+      }
+    }
+
+    // Mobile menu toggle buttons
+    .menu-toggle,
+    .sub-menu-toggle {
+      display: block;
+      color: $nav-color;
+      background: $nav-bg-color;
+      text-align: center;
+      border: none;
+      border-radius: 0;
+      margin: 0 auto;
+      overflow: hidden;
+      visibility: visible;
+      @include mq($nav-breakpoint) {display: none;}
+      &:hover, &:focus {
+        color: $nav-color-hover;
+        background: $nav-bg-color-hover;
+        border: none;
+      }
+    }
+
+    .menu-toggle {
+      position: relative;
+      line-height: 22px;
+      width: 100%;
+      padding: $nav-item-padding - 5 $nav-item-padding;
+      z-index: 1000;
+      &:before {
+        font-size: 1.5em;
+        margin-right: 10px;
+        text-rendering: auto;
+      }
+    }
+
+    .sub-menu-toggle {
+      padding: $nav-item-padding - 5 $nav-item-padding;
+      z-index: 100;
+      &:before {
+        display: inline-block;
+        text-rendering: auto;
+        transform: rotate( 0 );
+        transition: transform .25s ease-in-out;
+      }
+      &.activated:before {transform: rotate( 180deg );}
+    }
+
+  }
+
+  /* ===== Secondary Navigation ===== */
+
+    @mixin secondary-navigation {
+
+      .nav-secondary {
+        display: none;
+        background: $nav-bg-color;
+        @include mq($nav-breakpoint) {display: block;}
+      }
+
+    }
+
+  /* ===== Header Navigation ===== */
+
+    @mixin header-navigation {
+
+      .site-header {
+        .title-area {
+          margin-bottom: $whitespace-standard;
+          @include mq($breakpoint-primary) {margin-bottom: 0;}
+        }
+        .wrap {
+          @include mq($breakpoint-primary) {
+            grid-template-columns: 1fr 1fr;
+            grid-gap: $whitespace-standard;
+          }
+        }
+      }
+
+      .nav-primary {
+        @include mq($breakpoint-primary) {
+          grid-column: 2;
+        }
+        @include mq($nav-breakpoint) {
+          margin: auto;
+        }
+      }
+
+      .genesis-nav-menu {
+        .nav-primary & .sub-menu .sub-menu {
+          @include mq($nav-breakpoint) {
+            position: static;
+            margin: 0;
+          }
+        }
+        .nav-primary & .sub-menu .menu-item-has-children.sfHover > a:after {
+          transform: rotate(0);
+          transition: transform .25s ease-in-out;
+        }
+      }
+
+      .menu-toggle {
+        @include mq($breakpoint-primary) {
+          margin: auto 0 auto auto;
+          width: auto;
+        }
+      }
+    }
+
+
+
+
+/* ========== Widgets ========== */
+
+  /* ===== Header Widgets ===== */
+
+    @mixin header-widgets {
+
+      .site-header {
+        .wrap {
+          grid-template-columns: 1fr 1fr;
+          grid-gap: $whitespace-standard;
+        }
+      }
+
+      .header-widget-area {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .widget {
+          flex-grow: 1;
+          padding-top: 0;
+          padding-bottom: 0;
+          max-width: 350px;
+          &:first-of-type {padding-left: 0;}
+          &:last-of-type {padding-right: 0;}
+        }
+      }
+
+    }
+
+  /* ===== Footer Widgets ===== */
+
+    @mixin footer-widgets {
+
+      .footer-widgets {
+        background: white;
+
+        .widget-area {
+          display: flex;
+          justify-content: center;
+          .widget {
+            display: none;
+            @include mq($breakpoint-primary) {display: block; &:nth-of-type(n+3) {display: none;}}
+            @include mq($breakpoint-secondary) {&:nth-of-type(n+3) {display: block;} &:nth-of-type(n+4) {display: none;}}
+            @include mq($breakpoint-tertiary) {&:nth-of-type(n+4) {display: block;}}
+          }
+        }
+      }
+
+    }
+
+  /* ===== Individual Widgets ===== */
+
+    // Genesis Featured Content
+    @mixin genesis-featured-content {
+      .featured-content {
+        .entry {
+          background: none;
+          padding: 0;
+          &:last-of-type {margin-bottom: 0;}
+        }
+        .entry-header {
+          .entry-title {font-size: 1.8rem;}
+          .entry-meta {font-size: 1.2rem; border-top: none;}
+        }
+        .entry-content {font-size: 1.4rem; clear: both;}
+      }
+    }
+
+    // WordPress Calendar
+    @mixin wp-calendar {
+      .widget_calendar {
+        .wp-calendar {width: 100%;}
+        th, td {text-align: center;}
+      }
+    }
