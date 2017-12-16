@@ -110,20 +110,20 @@
 
   /* ===== Titles ===== */
 
-    .archive-description .entry-title,
+    .page .entry-title,
     .archive-title,
     .author-box-title {
-      font-size: 2.5rem;
-    }
-
-    .entry-title {
       font-size: 3.6rem;
-      &:hover, &:focus {
-        color: $color-link-dark;
-      }
+      &:hover, &:focus {color: $color-text-dark;}
     }
 
     .entry-title a,
+    .archive-description .entry-title a, {
+      color: $color-text-dark;
+      font-size: 3.6rem;
+      &:hover, &:focus {color: $color-link-dark;}
+    }
+
     .sidebar .widget-title a {
       color: $color-text-dark;
     }

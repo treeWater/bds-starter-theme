@@ -580,7 +580,6 @@ input[type="search"]::-webkit-search-results-button {
 @media (min-width: 600px) {
   .gform_fields.left_label {
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
     grid-template-columns: auto; } }
@@ -595,7 +594,6 @@ input[type="search"]::-webkit-search-results-button {
 @media (min-width: 600px) {
   .gform_fields.right_label {
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
     grid-template-columns: auto; } }
@@ -608,7 +606,6 @@ input[type="search"]::-webkit-search-results-button {
     max-width: 800px; }
     .gform_fields.right_label .gfield label {
       -webkit-box-ordinal-group: 3;
-      -webkit-order: 2;
       -ms-flex-order: 2;
       order: 2;
       text-align: right; } }
@@ -712,7 +709,6 @@ input[type="search"]::-webkit-search-results-button {
   @media (min-width: 600px) {
     .gf_page_steps {
       display: -webkit-box;
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex; }
       .gf_page_steps .gf_step {
@@ -820,15 +816,12 @@ select {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); }
   #ui-datepicker-div .ui-datepicker-header {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
     -webkit-box-align: center;
-    -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
     margin: 10px 0; }
@@ -849,7 +842,6 @@ select {
     width: 10%;
     text-align: center;
     -webkit-box-ordinal-group: 3;
-    -webkit-order: 2;
     -ms-flex-order: 2;
     order: 2; }
     #ui-datepicker-div .ui-datepicker-next .ui-icon {
@@ -862,7 +854,6 @@ select {
       display: none; }
   #ui-datepicker-div .ui-datepicker-title {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     width: 70%; }
@@ -995,17 +986,26 @@ h6 {
   font-size: 1.6rem; }
 
 /* ===== Titles ===== */
-.archive-description .entry-title,
+.page .entry-title,
 .archive-title,
 .author-box-title {
-  font-size: 2.5rem; }
-
-.entry-title {
   font-size: 3.6rem; }
-  .entry-title:hover, .entry-title:focus {
-    color: #65acdc; }
+  .page .entry-title:hover, .page .entry-title:focus,
+  .archive-title:hover,
+  .archive-title:focus,
+  .author-box-title:hover,
+  .author-box-title:focus {
+    color: #323232; }
 
 .entry-title a,
+.archive-description .entry-title a {
+  color: #323232;
+  font-size: 3.6rem; }
+  .entry-title a:hover, .entry-title a:focus,
+  .archive-description .entry-title a:hover,
+  .archive-description .entry-title a:focus {
+    color: #65acdc; }
+
 .sidebar .widget-title a {
   color: #323232; }
 
@@ -1363,16 +1363,13 @@ textarea:focus,
 
 .genesis-nav-menu {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
   font-weight: 600;
@@ -1383,7 +1380,6 @@ textarea:focus,
     .genesis-nav-menu {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
       -ms-flex-direction: row;
       flex-direction: row; } }
   .genesis-nav-menu .menu-item {
@@ -1406,15 +1402,12 @@ textarea:focus,
       background: #65acdc; }
   .genesis-nav-menu .menu-item-has-children {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
     .genesis-nav-menu .menu-item-has-children a {
       -webkit-box-flex: 1;
-      -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
       flex-grow: 1; }
   @media (min-width: 600px) {
@@ -1534,7 +1527,6 @@ textarea:focus,
         grid-template-columns: 350px auto; }
         .sidebar-content .site-inner .content-sidebar-wrap .content {
           -webkit-box-ordinal-group: 3;
-          -webkit-order: 2;
           -ms-flex-order: 2;
           order: 2; }
       .sidebar-content-sidebar .site-inner .content-sidebar-wrap {
