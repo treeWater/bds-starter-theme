@@ -445,6 +445,16 @@
       label {color: $form-color; font-size: 1em; margin-left: 10px;}
     }
 
+    // Upload Files Area
+    .gform_drop_area {
+      padding: $form-grid-gap;
+      text-align: center;
+      border: 2px dashed darken($color-tertiary, 20%);
+      .button {
+        font-size: $form-font-size;
+      }
+    }
+
     // Validation and Error Messages
     .gform_confirmation_wrapper {
       text-align: center;
