@@ -250,6 +250,9 @@
       &.gform_hidden, &.gfield_visibility_hidden {display: none !important;}
     }
 
+    // Description Above
+    .field_description_above .gfield_description {margin-bottom: 5px;}
+
     // Left Labeling
       .gform_fields.left_label {
         @include mq($form-breakpoint) {justify-content: center; grid-template-columns: auto;}

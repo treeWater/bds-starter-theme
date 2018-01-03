@@ -580,6 +580,9 @@ input[type="search"]::-webkit-search-results-button {
   .gfield.gform_hidden, .gfield.gfield_visibility_hidden {
     display: none !important; }
 
+.field_description_above .gfield_description {
+  margin-bottom: 5px; }
+
 @media (min-width: 600px) {
   .gform_fields.left_label {
     -webkit-box-pack: center;
