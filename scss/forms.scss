@@ -62,7 +62,7 @@
   $form-input-color                : $color-text-dark;
   $form-input-background           : $color-secondary;
   $form-input-padding              : 8px;
-  $form-input-border               : 1px solid $grey;
+  $form-input-border               : 1px solid grey;
   $form-input-border-radius        : 0;
   $form-input-box-shadow           : none;
   // Inputs – Hover & Focus
@@ -148,6 +148,8 @@
     box-shadow: $form-input-box-shadow-focus;
     outline: none;
   }
+
+  textarea {max-height: 200px;}
 
   input[type="checkbox"],
   input[type="image"],
