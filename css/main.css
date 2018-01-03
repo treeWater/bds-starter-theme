@@ -796,6 +796,8 @@ select {
 
 .ginput_container .wp-editor-container {
   border: 1px solid grey; }
+  .ginput_container .wp-editor-container button:hover {
+    background: none; }
 
 .gform_confirmation_wrapper {
   text-align: center;

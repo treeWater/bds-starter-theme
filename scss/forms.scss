@@ -461,6 +461,7 @@
     // Rich Text Editor
     .ginput_container .wp-editor-container {
       border: $form-input-border;
+      button:hover {background: none;}
     }
 
     // Validation and Error Messages
