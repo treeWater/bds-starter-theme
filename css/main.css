@@ -794,6 +794,9 @@ select {
   .gform_drop_area .button {
     font-size: 1.8rem; }
 
+.ginput_container .wp-editor-container {
+  border: 1px solid grey; }
+
 .gform_confirmation_wrapper {
   text-align: center;
   margin: 30px 0; }
