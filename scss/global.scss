@@ -408,6 +408,7 @@
 
       // See Mixins.scss/Individual Widgets
 
+      @include rss-widget;
       @include genesis-featured-content;
       @include wp-calendar;
 

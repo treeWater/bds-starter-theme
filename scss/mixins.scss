@@ -305,6 +305,17 @@
 
   /* ===== Individual Widgets ===== */
 
+    // RSS Widget
+    @mixin rss-widget {
+      .widget_rss {
+        .widget-title .rsswidget {
+          color: $color-text-dark;
+          img {display: none;}
+        }
+        .rss-date {display: block;}
+      }
+    }
+
     // Genesis Featured Content
     @mixin genesis-featured-content {
       .featured-content {
