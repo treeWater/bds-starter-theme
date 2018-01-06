@@ -291,7 +291,7 @@
 		 * @link  https://my.studiopress.com/documentation/customization/shortcodes-reference/footer-shortcode-reference/
 		 */
 		function genesis_sample_footer_creds_filter( $creds ) {
-			$creds = 'Designed by <a href="http://design.brubakerministries.org" target="_blank" title="Brubaker Design Services">Brubaker Design Services</a><br/>[footer_loginout]<br/>[footer_copyright before="Copyright "] – ';
+			$creds = 'Designed by <a href="http://design.brubakerministries.org" target="_blank" alt="Brubaker Design Services">Brubaker Design Services</a><br/>[footer_loginout]<br/>[footer_copyright before="Copyright "] – ';
 			$creds = $creds . get_bloginfo('name');
 
 			return $creds;
