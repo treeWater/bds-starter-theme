@@ -914,6 +914,7 @@ select {
     - Captioned Images
     - Avatars
   – Galleries
+  – Embedded Items
   – Tables
   – Forms
   – Transitions
@@ -975,7 +976,7 @@ a {
   color: #65acdc;
   text-decoration: none; }
   a:hover, a:focus {
-    color: #8fc3e5;
+    color: #f0f0f0;
     text-decoration: none; }
 
 /* ===== Headings ===== */
@@ -1183,6 +1184,17 @@ a.aligncenter img, a.alignnone {
     .gallery {
       grid-gap: 30px; } }
 
+/* ===== Embedded Items ===== */
+.wp-audio-shortcode {
+  border-radius: 0; }
+  .wp-audio-shortcode .mejs-controls {
+    background: #3c96d2 !important;
+    border-radius: 0; }
+    .wp-audio-shortcode .mejs-controls .mejs-time-rail .mejs-time-loaded {
+      background: #f0f0f0; }
+    .wp-audio-shortcode .mejs-controls .mejs-time-rail .mejs-time-current {
+      background: #f0f0f0; }
+
 /* ===== Tables ===== */
 table {
   border-collapse: collapse;
@@ -1280,6 +1292,14 @@ textarea:focus,
 /* ===== Header Widgets ===== */
 /* ===== Footer Widgets ===== */
 /* ===== Individual Widgets ===== */
+.widget_rss .widget-title .rsswidget {
+  color: #323232; }
+  .widget_rss .widget-title .rsswidget img {
+    display: none; }
+
+.widget_rss .rss-date {
+  display: block; }
+
 .featured-content .entry {
   background: none;
   padding: 0; }

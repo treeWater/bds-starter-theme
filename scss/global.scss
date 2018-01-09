@@ -18,6 +18,7 @@
     - Captioned Images
     - Avatars
   – Galleries
+  – Embedded Items
   – Tables
   – Forms
   – Transitions
@@ -288,6 +289,21 @@
       display: grid;
       grid-gap: $whitespace-mobile;
       @include mq($breakpoint-primary) {grid-gap: $whitespace-standard;}
+    }
+
+  /* ===== Embedded Items ===== */
+
+    // Audio player
+    .wp-audio-shortcode {
+      border-radius: 0;
+      .mejs-controls {
+        background: $color-primary !important;
+        border-radius: 0;
+        .mejs-time-rail {
+          .mejs-time-loaded {background: $color-tertiary;}
+          .mejs-time-current {background: $color-secondary;}
+        }
+      }
     }
 
   /* ===== Tables ===== */
