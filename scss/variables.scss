@@ -24,10 +24,10 @@
     $color-text-light        : $lightgrey;
 
     $color-link-dark         : lighten($blue, 10%);
-    // $color-link-dark-hover   : darken($blue,20%); // Need to set
+    $color-link-dark-hover   : darken($blue,20%);
 
-    $color-link-light        : lighten($blue, 20%);
-    // $color-link-light-hover  : $orange; // Need to set
+    $color-link-light        : $lightgrey;
+    $color-link-light-hover  : white;
 
     $color-shadow            : rgba(0,0,0,.5);
 
