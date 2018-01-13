@@ -406,6 +406,7 @@ template {
 /* ===== Media Queries ===== */
 /* ========== DEFINE MIXINS HERE ========== */
 /* ===== TABLE OF CONTENTS =====
+– Structure
 – Site Header
   – Title & Description
   – Logo
@@ -417,6 +418,7 @@ template {
   – Footer Widgets
   – Individual Widgets
 */
+/* ========== Structure ========== */
 /* ========== Site Header ========== */
 /* ===== Title & Description ===== */
 /* ===== Logo ===== */
@@ -1055,11 +1057,12 @@ blockquote {
     margin: 0; }
 
 blockquote::before {
-  content: "\201C";
+  content: "\f122";
   display: block;
+  font-family: dashicons;
   font-size: 3rem;
   height: 0;
-  left: -20px;
+  left: -40px;
   position: relative;
   top: -10px; }
 
@@ -1742,13 +1745,17 @@ textarea:focus,
   color: #f0f0f0;
   background: #323232;
   text-align: center;
-  padding: 30px 0; }
+  padding: 20px; }
+  @media (min-width: 600px) {
+    .site-footer {
+      padding: 30px; } }
   @media (min-width: 1px) and (max-width: 320px) {
     .site-footer {
       font-size: 1.4rem; } }
   .site-footer p {
-    line-height: 2.5;
     margin-bottom: 0; }
+  .site-footer .admin-login {
+    margin: 15px 0; }
 
 /* ========== ADD STYLES HERE ========== */
 /* ========== ADD STYLES HERE ========== */

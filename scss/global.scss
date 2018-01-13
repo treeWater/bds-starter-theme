@@ -679,7 +679,8 @@
       color: $color-text-light;
       background: $color-quaternary;
       text-align: center;
-      padding: $whitespace-standard 0;
+      @include standard-padding;
       @include mq(xs) {font-size: 1.4rem;}
-      p {line-height: 2.5; margin-bottom: 0;}
+      p {margin-bottom: 0;}
+      .admin-login {margin: $whitespace-mobile 0;}
     }

@@ -4,6 +4,7 @@
 
 
 /* ===== TABLE OF CONTENTS =====
+– Structure
 – Site Header
   – Title & Description
   – Logo
@@ -15,6 +16,16 @@
   – Footer Widgets
   – Individual Widgets
 */
+
+
+
+
+/* ========== Structure ========== */
+
+  @mixin standard-padding {
+    padding: $whitespace-mobile + 5;
+    @include mq($breakpoint-primary) {padding: $whitespace-standard;}
+  }
 
 
 
