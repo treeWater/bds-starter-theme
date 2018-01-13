@@ -1546,7 +1546,7 @@ textarea:focus,
 /* ===== Site Inner ===== */
 .site-inner {
   word-wrap: break-word;
-  padding: 0 0 30px;
+  padding: 0 0 15px;
   margin: 0 auto;
   max-width: 1280px; }
   @media (min-width: 600px) {

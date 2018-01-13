@@ -502,7 +502,7 @@
 
     .site-inner {
       word-wrap: break-word;
-      padding: 0 0 $whitespace-standard;
+      padding: 0 0 $whitespace-mobile;
       margin: 0 auto;
       max-width: 1280px;
       @include mq($breakpoint-primary) {padding: $whitespace-standard $whitespace-mobile;}
