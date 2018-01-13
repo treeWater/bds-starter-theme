@@ -1274,7 +1274,7 @@ textarea:focus,
 /* ===== Widgets ===== */
 .widget {
   word-wrap: break-word;
-  padding: 15px; }
+  padding: 20px; }
   @media (min-width: 600px) {
     .widget {
       padding: 30px; } }
@@ -1546,9 +1546,12 @@ textarea:focus,
 /* ===== Site Inner ===== */
 .site-inner {
   word-wrap: break-word;
-  padding: 15px;
+  padding: 0 0 30px;
   margin: 0 auto;
   max-width: 1280px; }
+  @media (min-width: 600px) {
+    .site-inner {
+      padding: 30px 15px; } }
   @media (min-width: 768px) {
     .site-inner {
       padding: 30px; } }
@@ -1595,7 +1598,7 @@ textarea:focus,
 
 .entry {
   background: white;
-  padding: 15px; }
+  padding: 20px; }
   @media (min-width: 600px) {
     .entry {
       padding: 30px; } }

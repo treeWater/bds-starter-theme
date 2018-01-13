@@ -399,8 +399,7 @@
 
     .widget {
       word-wrap: break-word;
-      padding: $whitespace-mobile;
-      @include mq($breakpoint-primary) {padding: $whitespace-standard;}
+      @include standard-padding;
       & p:last-child, & ul > li:last-of-type, .widget-area &:last-of-type {margin-bottom: 0;} // Removes last margins
     }
 
@@ -503,9 +502,10 @@
 
     .site-inner {
       word-wrap: break-word;
-      padding: $whitespace-mobile;
+      padding: 0 0 $whitespace-standard;
       margin: 0 auto;
       max-width: 1280px;
+      @include mq($breakpoint-primary) {padding: $whitespace-standard $whitespace-mobile;}
       @include mq($breakpoint-secondary) {padding: $whitespace-standard;}
       @include mq(xxl) {.sidebar-content-sidebar & {max-width: 1600px;}}
       .content-sidebar-wrap {
@@ -542,8 +542,7 @@
 
       .entry {
         background: white;
-        padding: $whitespace-mobile;
-        @include mq($breakpoint-primary) {padding: $whitespace-standard;}
+        @include standard-padding;
       }
 
       .entry-content {
