@@ -274,11 +274,6 @@
       .alignleft & {margin-right: $whitespace-mobile;}
       .alignright & {margin-left: $whitespace-mobile;}
 
-      .author-box & {
-        float: left;
-        margin-right: $whitespace-standard;
-      }
-
       .comment & {
         float: left;
         margin: 0 $whitespace-mobile 0 0;
@@ -651,6 +646,17 @@
           // Author box clearfix
           .author-box:before {content: " "; display: table;}
           .author-box:after {content: " "; display: table; clear: both;}
+
+          .author-box {
+            text-align: center;
+            @include mq(ms) {text-align: left;}
+          }
+
+          .author-box .avatar {
+            margin-bottom: 10px;
+            @include mq(ms) {float: left; margin-bottom: 0; margin-right: $whitespace-mobile;}
+            @include mq($breakpoint-primary) {margin-right: $whitespace-standard;}
+          }
 
     /* ===== Sibebars ===== */
 
