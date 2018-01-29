@@ -344,7 +344,7 @@
     }
 
     // WordPress Calendar
-    @mixin wp-calendar {
+    @mixin wp-calendar-widget {
       .widget_calendar {
         .wp-calendar {width: 100%;}
         th, td {text-align: center;}
