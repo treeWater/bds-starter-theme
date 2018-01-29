@@ -46,6 +46,7 @@
       – Entry Meta
       – Pagination
       – Comments
+      – Author Box
     – Sidebars
   – Site Footer
     – Footer Widget Area
@@ -644,6 +645,12 @@
           }
 
         .entry-pings .reply {display: none;}
+
+        /* ===== Author Box ===== */
+
+          // Author box clearfix
+          .author-box:before {content: " "; display: table;}
+          .author-box:after {content: " "; display: table; clear: both;}
 
     /* ===== Sibebars ===== */
 
