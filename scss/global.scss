@@ -23,6 +23,7 @@
   – Forms
   – Transitions
   – Genesis Elements
+    – Author Box
     - Breadcrumbs
     – Search Form
   – Widgets
@@ -46,7 +47,6 @@
       – Entry Meta
       – Pagination
       – Comments
-      – Author Box
     – Sidebars
   – Site Footer
     – Footer Widget Area
@@ -377,19 +377,38 @@
       margin-bottom: 0;
     }
 
-    // Breadcrumbs
-    .breadcrumb {
-      background: white;
-      padding: $whitespace-mobile;
-      margin-bottom: 1px;
-      @include mq($breakpoint-primary) {padding: $whitespace-mobile $whitespace-standard;}
-    }
+    /* ===== Author Box ===== */
 
-    // Search Form
-    .entry-content .search-form {
-    	margin-bottom: 40px;
-    	width: 50%;
-    }
+      // Author box clearfix
+      .author-box:before {content: " "; display: table;}
+      .author-box:after {content: " "; display: table; clear: both;}
+
+      .author-box {
+        text-align: center;
+        @include mq(ms) {text-align: left;}
+      }
+
+      .author-box .avatar {
+        margin-bottom: 10px;
+        @include mq(ms) {float: left; margin-bottom: 0; margin-right: $whitespace-mobile;}
+        @include mq($breakpoint-primary) {margin-right: $whitespace-standard;}
+      }
+
+    /* ===== Breadcrumbs ===== */
+
+      .breadcrumb {
+        background: white;
+        padding: $whitespace-mobile;
+        margin-bottom: 1px;
+        @include mq($breakpoint-primary) {padding: $whitespace-mobile $whitespace-standard;}
+      }
+
+    /* ===== Search Form ===== */
+    
+      .entry-content .search-form {
+      	margin-bottom: 40px;
+      	width: 50%;
+      }
 
   /* ===== Widgets ===== */
 
@@ -640,23 +659,6 @@
           }
 
         .entry-pings .reply {display: none;}
-
-        /* ===== Author Box ===== */
-
-          // Author box clearfix
-          .author-box:before {content: " "; display: table;}
-          .author-box:after {content: " "; display: table; clear: both;}
-
-          .author-box {
-            text-align: center;
-            @include mq(ms) {text-align: left;}
-          }
-
-          .author-box .avatar {
-            margin-bottom: 10px;
-            @include mq(ms) {float: left; margin-bottom: 0; margin-right: $whitespace-mobile;}
-            @include mq($breakpoint-primary) {margin-right: $whitespace-standard;}
-          }
 
     /* ===== Sibebars ===== */
 
