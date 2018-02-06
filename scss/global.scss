@@ -404,7 +404,7 @@
       }
 
     /* ===== Search Form ===== */
-    
+
       .entry-content .search-form {
       	margin-bottom: 40px;
       	width: 50%;
@@ -612,10 +612,7 @@
         .comment-respond,
         .entry-pings {
           background: white;
-          padding: $whitespace-mobile;
-          @include mq($breakpoint-primary) {
-            padding: $whitespace-standard;
-          }
+          @include standard-padding;
           h3 {font-size: 3rem; line-height: 1;}
         }
 
