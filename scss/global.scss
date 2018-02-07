@@ -293,6 +293,7 @@
     // Audio player
     .wp-audio-shortcode {
       border-radius: 0;
+      width: 100% !important;
       .mejs-controls {
         background: $color-primary !important;
         border-radius: 0;
