@@ -160,18 +160,16 @@
     blockquote {
       margin: $whitespace-standard;
       border-left: 5px solid $color-primary;
-      p {margin: 0;}
+      p:last-of-type {margin: 0;}
     }
 
     blockquote::before {
+      float: left;
       content: "\f122";
-      display: block;
       font-family: dashicons;
       font-size: 3rem;
-      height: 0;
-      left: -40px;
-      position: relative;
-      top: -10px;
+      line-height: 1.2;
+      padding-right: 10px;
     }
 
     mark {background: $color-tertiary; color: $color-text-dark;}
